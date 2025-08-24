@@ -2,9 +2,10 @@ const todoInput = document.getElementById("TodoText");
 const addBtn = document.getElementById("add");
 const ul = document.querySelector("ul");
 const counter = document.getElementById("counter");
-const cn=document.getElementById('counter');
 
-
+function updateCounter() {
+  counter.textContent = ul.querySelectorAll("li").length;
+}
 addBtn.addEventListener("click", () => {
     if (todoInput.value.trim() === "") {
         alert("Please enter a task!");
@@ -23,6 +24,7 @@ addBtn.addEventListener("click", () => {
     </div>
   `;
     ul.appendChild(li);
+    updateCounter();
 
     const editing = document.createElement("div");
     const input = document.createElement("input");
@@ -69,11 +71,7 @@ addBtn.addEventListener("click", () => {
     // delete icon click
     deleteIcon.addEventListener("click", () => {
         li.remove();
-        ele--;
-        if(ele<0)
-            cn.textContent=0;
-        else
-            cn.textContent=ele;
+        updateCounter();
         editing.remove();
     });
 });
