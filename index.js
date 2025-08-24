@@ -64,10 +64,6 @@ addBtn.addEventListener("click", () => {
         editing.classList.add("hidden");
     });
 
-    //counting 
-    cn.textContent=(ul.children.length)/2;
-    var ele=ul.children.length/2;
-
     // delete icon click
     deleteIcon.addEventListener("click", () => {
         li.remove();
