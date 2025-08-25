@@ -5,21 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .sub-container::-webkit-scrollbar {
+            display: none;
+        }
+        .sub-container {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container flex justify-center items-center h-screen">
         <div
-            class="sub-container rounded-lg p-7 bg-black w-full max-w-sm sm:max-w-md md:max-w-lg lg:w-[28%] h-auto min-h-[70%]">
+            class="sub-container rounded-lg p-7 bg-black w-full max-w-sm sm:max-w-md md:max-w-lg lg:w-[28%] h-[500px] overflow-auto">
             <div
-                class="display sticky top-0 flex justify-between items-center border-2 border-indigo-400 p-4 rounded-xl text-white my-5">
+                class="display sticky top-0 z-[2] bg-black flex justify-between items-center border-2 border-indigo-400 p-4 rounded-xl text-white my-5">
                 <div>
                     <h1 class="font-bold text-2xl">Total Todo's</h1>
                     <p class="font-bold">keep it up!</p>
                 </div>
                 <p id="counter" class="bg-indigo-400 w-12 h-12 flex items-center justify-center rounded-full font-bold text-lg text-white">0</p>
             </div>
-            <div class="enter-todo sticky flex text-white my-5">
+            <div class="enter-todo sticky top-23 z-[1] flex text-white my-5">
                 <input id="TodoText" class="bg-gray-800 p-1 w-[100%] rounded-lg text-sm outline-none" type="text"
                     placeholder="Write your task">
                 <button id="add" class="bg-indigo-400 w-10 h-10 flex items-center justify-center rounded-full ml-2 cursor-pointer text-white text-xl font-bold" value="+">+</button>
